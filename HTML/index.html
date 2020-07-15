@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333333;
+    }
+    
+    li {
+      float: left;
+    }
+    
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 16px;
+      text-decoration: none;
+    }
+    
+    li a:hover {
+      background-color: #111111;
+    }
+    </style>
+    </head>
+    <body>
+    
+    <h2>Navigation Menu</h2>
+    <p>Menu Bar:</p>
+    
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#news">City</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>US Cities Statistics</title>
+  <div id="bar"></div>
+
+  <button>Price to Income Ratio</button>
+  <button>Affordability Index</button>
+  <button>Crime Index</button>
+  <button>Safety Index</button>
+  <button>Pollution Index</button>
+  <button>Traffic Commute Time Index</button>
+  <button>Cost of Living Index</button>
+  <button>Health Care Index</button>
+  <button>Purchasing Power Index</button>
+  <button>Quality of Life Index</button>
+  <button>Average Temperature in 2019</button>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>US Cities Statistics</h1>
+        <p>Paragraph talking about the webpage</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h2>Map:</h2>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+  </div>
+ 
+  <script src="config.js"></script>
+  <script src="logic.js"></script>
+  
+</body>
+
+</html>
