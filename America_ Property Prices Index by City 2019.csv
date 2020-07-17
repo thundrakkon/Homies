@@ -1,4 +1,4 @@
-Rank,City,State,Country,Price To Income Ratio,Gross Rental Yield City Centre,Gross Rental Yield Outside of Centre,Price To Rent Ratio City Centre,Price To Rent Ratio Outside Of City Centre,Mortgage As A Percentage Of Income,Affordability Index
+rank,city,state,country,price_to_income_ratio,gross_rental_yield_city_centre,gross_rental_yield_outside_of_centre,price_to_rent_ratio_city_centre,price_to_rent_ratio_outside_of_city_centre,mortgage_as_a_percentage_of_income,affordability_index
 1,Vancouver, Canada,,16.18,3.65,3.48,27.38,28.72,114.87,0.87
 2,Toronto, Canada,,13.07,4.32,4.16,23.14,24.03,92.64,1.08
 3,New York, NY, United States,11.66,4.97,6.79,20.12,14.73,86.25,1.16
