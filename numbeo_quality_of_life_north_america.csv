@@ -1,4 +1,4 @@
-Rank,City,State,Country,Quality of Life Index,Purchasing Power Index,Safety Index,Health Care Index,Cost of Living Index,Property Price to Income Ratio,Traffic Commute Time Index,Pollution Index,Climate Index
+rank,city,state,country,quality_of_life_index,purchasing_power_index,safety_index,health_care_index,cost_of_living_index,property_price_to_income_ratio,traffic_commute_time_index,pollution_index,climate_index
 1,Raleigh, NC, United States,216.05,160.35,69.43,74.93,70.06,2.58,33.51,21.59,83.88
 2,Madison, WI, United States,204.36,136.4,72.41,79.58,63.48,3.3,23.88,20.78,51.64
 3,Columbus, OH, United States,195.88,127.33,57.64,75.28,65.79,2.31,25.21,24.37,71.29
