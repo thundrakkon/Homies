@@ -1,99 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="d3Style.css">
-  <style>
-  <title>Homies<title>
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #333333;
-    }
-    
-    li {
-      float: left;
-    }
-    
-    li a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 16px;
-      text-decoration: none;
-    }
-    
-    li a:hover {
-      background-color: #111111;
-    }
-    </style>
-    </head>
-    <body>
-    
-    <h2>Navigation Menu</h2>
-    <p>Menu Bar:</p>
-    
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#city">City</a></li>
-      <li><a href="#map">Map</a></li>
-      <li><a href="#about">About</a></li>
-    </ul>
-  
+  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <h1>US Cities Statistics</h1>
-  <div id="bar"></div>
-
-  <button>Price to Income Ratio</button>
-  <button>Affordability Index</button>
-  <button>Crime Index</button>
-  <button>Safety Index</button>
-  <button>Pollution Index</button>
-  <button>Traffic Commute Time Index</button>
-  <button>Cost of Living Index</button>
-  <button>Health Care Index</button>
-  <button>Purchasing Power Index</button>
-  <button>Quality of Life Index</button>
-  <button>Average Temperature in 2019</button>
+  <title>US Cities Statistics</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
 
+
   <div class="container">
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
-        <h2>List of Cities</h2>
-        <p>Where is the best place to live in the US.</p>
+        <h1>U.S. City Statistics</h1>
+        <p>Statistical data of the top cities in the United States of America</p>
       </div>
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 jumbotron text-center">
-          <h1>Price to Income Ratio</h1>
-          <p>Paragraph talking about the webpage</p>
-        </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 jumbotron text-center">
-             <h1>3rd View</h1>
-            <p>Paragraph talking about the webpage</p>
-          </div>
     <div class="row">
       <div class="col-md-2">
         <div class="well">
-          <h2>Map:</h2>
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
-        </div>
-  </div>
- 
+          <h5>Statistics:</h5>
+
+          <form>
+            <select name = "dropdown">
+            <option value = "Price to Income Ratio" selected>Price to Income Ratio</option>
+            <option value = "Affordability Index">Affordability Index</option>
+            <option value = "Crime Index">Crime Index</option>
+            <option value = "Safety Index">Safety Index</option>
+            <option value = "Pollution Index">Pollution Index</option>
+            <option value = "Traffic Commute Time Index">Traffic Commute Time Index</option>
+            <option value = "Cost of Living Index">Cost of Living Index</option>
+            <option value = "Health Care Index">Health Care Index</option>
+            <option value = "Purchasing Power Index">Purchasing Power Index</option>
+            <option value = "Quality of Life Index">Quality of Life Index</option>
+            <option value = "Average Temperature in 2019">Average Temperature in 2019</option>
+            </select>
+            </form>
+
+            <div class="row">
+              <div class="col-md-2">
+                <div class="well">
+       
+                  
+                  <select id="selDataset" onchange="optionChanged(this.value)"></select>
+                </div>
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Which U.S. city would you like to live?</h3>
+                    <p>Details here</p>
+                  </div>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="d3Style.css">
+
+  <body>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <div id="bar"></div>
+
   <script src="config.js"></script>
   <script src="logic.js"></script>
   
-</body>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+  integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+  crossorigin=""/>
 
+  <!-- Our CSS -->
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+  <!-- The div that holds our map -->
+  <div id="map-id"></div>
+
+  <!-- D3 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+
+  <!-- Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+  integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+  crossorigin=""></script>
+
+</body>
 </html>
