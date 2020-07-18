@@ -22,7 +22,7 @@ from flask import Flask, jsonify
 ###########################################################
 # Database Setup
 ###########################################################
-engine = create_engine("sqlite:///Resources/Colins_SQL.sqlite")
+engine = create_engine("sqlite:///Resources/city.sqlite")
 connection = engine.connect()
 
 # Declare bases and map class
@@ -35,8 +35,7 @@ Base.prepare(engine, reflect=True)
 Base.classes.keys()
 
 # Save references to each table
-Measurement = Base.classes.measurement
-Station = Base.classes.station
+City = Base.classes.city
 
 ###########################################################
 # Flask setup
@@ -52,11 +51,7 @@ app = Flask(__name__)
 def home():
     return (
         f"Available Routes:<br/>"
-        f"/api/v1.0/precipitation<br/>"
-        f"/api/v1.0/stations<br/>"
-        f"/api/v1.0/tobs<br/>"
-        f"/api/v1.0/<start><br/>"
-        f"/api/v1.0/<start>/<end>"
+        f"/api/v1.0/data"
     )
 
 # Convert the query results to a dictionary using date as the key and prcp as the value
@@ -66,23 +61,43 @@ def data():
     # Create our session (link) from Python to the DB
     session = Session(engine)
 
-    # query results to a dictionary using date as the key and prcp as the value
-    results = session.query(Measurement.date, Measurement.prcp).\
-        filter(Measurement.date).\
-        order_by(Measurement.date).all()
+    # query results to a dictionary
+    results = session.query(City.city,
+        City.state,
+        City.country,
+        City.crime_index,
+        City.safety_index,
+        City.quality_of_life_index,
+        City.purchasing_power_index,
+        City.health_care_index,
+        City.cost_of_living_index,
+        City.traffic_commute_time_index,
+        City.price_to_income_ratio,
+        City.affordability_index).\
+        order_by(City.city).all()
 
     session.close()
 
-    # List date and precipitation
-    all_date = []
-    for date, prcp in results:
-        measurement_dict = {}
-        measurement_dict["date"] = date
-        measurement_dict["precipitation"] = prcp
-        all_date.append(measurement_dict)
+    # List all
+    data = []
+    for city, state, country, crime, safety, life, purchasing, health, cost, traffic, price, affordability in results:
+        data_dict = {}
+        data_dict["city"] = city
+        data_dict["state"] = state
+        data_dict["country"] = country
+        data_dict["crime_index"] = crime
+        data_dict["safety_index"] = crime
+        data_dict["quality_of_life_index"] = crime
+        data_dict["purchasing_power_index"] = crime
+        data_dict["health_care_index"] = crime
+        data_dict["cost_of_living_index"] = crime
+        data_dict["traffic_commute_time_index"] = crime
+        data_dict["price_to_income_ratio"] = crime
+        data_dict["affordability_index"] = crime
+        data.append(data_dict)
     
     # Jsonify the data
-    return jsonify(all_date)
+    return jsonify(data)
 
 if __name__ == "__main__":
     app.run(debug=True)
