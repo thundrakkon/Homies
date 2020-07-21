@@ -51,12 +51,12 @@ app = Flask(__name__)
 # def home():
 #     return (
 #         f"Available Routes:<br/>"
-#         f"/api/v1.0/data"
+#         f"/api/data"
 #     )
 
 # # Convert the query results to a dictionary using date as the key and prcp as the value
 # # Return the JSON representation of your dictionary
-# @app.route("/api/v1.0/data")
+# @app.route("/api/data")
 def data():
     # Create our session (link) from Python to the DB
     session = Session(engine)
@@ -73,27 +73,31 @@ def data():
         City.cost_of_living_index,
         City.traffic_commute_time_index,
         City.price_to_income_ratio,
-        City.affordability_index).\
+        City.affordability_index,
+        City.lat,
+        City.long).\
         order_by(City.city).all()
 
     session.close()
 
     # List all
     data = []
-    for city, state, country, crime, safety, life, purchasing, health, cost, traffic, price, affordability in results:
+    for city, state, country, crime, safety, life, purchasing, health, cost, traffic, price, affordability, lat, long in results:
         data_dict = {}
         data_dict["city"] = city
         data_dict["state"] = state
         data_dict["country"] = country
         data_dict["crime_index"] = crime
-        data_dict["safety_index"] = crime
-        data_dict["quality_of_life_index"] = crime
-        data_dict["purchasing_power_index"] = crime
-        data_dict["health_care_index"] = crime
-        data_dict["cost_of_living_index"] = crime
-        data_dict["traffic_commute_time_index"] = crime
-        data_dict["price_to_income_ratio"] = crime
-        data_dict["affordability_index"] = crime
+        data_dict["safety_index"] = safety
+        data_dict["quality_of_life_index"] = life
+        data_dict["purchasing_power_index"] = purchasing
+        data_dict["health_care_index"] = health
+        data_dict["cost_of_living_index"] = cost
+        data_dict["traffic_commute_time_index"] = traffic
+        data_dict["price_to_income_ratio"] = price
+        data_dict["affordability_index"] = affordability
+        data_dict["lat"] = lat
+        data_dict["long"] = long
         data.append(data_dict)
     
     # Jsonify the data
